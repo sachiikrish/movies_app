@@ -9,7 +9,7 @@ export const TMDB_CONFIG = {
   },
 };
 
-export const fetchMovies = async (query : string) => {
+export const fetchMovies = async (query: string) => {
   try {
     const response = await axios.get(
       query
@@ -25,5 +25,21 @@ export const fetchMovies = async (query : string) => {
     return data;
   } catch (error) {
     console.log("Error: ", error);
+  }
+};
+
+export const fetchMovieDetails = async (movie_id: string) => {
+  try {
+    const response = await axios.get(
+      `${TMDB_CONFIG.BASE_URL}/movie/${movie_id}?api_key=${TMDB_CONFIG.API_KEY}`,
+      {
+        headers: TMDB_CONFIG.headers,
+      }
+    );
+
+    const data = response.data;
+    return data;
+  } catch (error) {
+    console.log(error);
   }
 };

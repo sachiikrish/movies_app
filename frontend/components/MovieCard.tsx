@@ -22,7 +22,7 @@ const MovieCard = ({
     : "https://placehold.co/600x400/1a1a1a/ffffff.png";
 
   return (
-    <Link href={`/movie/${id}`} asChild>
+    <Link href={`/movies/${id}`} asChild>
       <TouchableOpacity className="w-[32%]">
         <Image
           source={{
@@ -47,9 +47,6 @@ const MovieCard = ({
             <Text className="text-xs text-light-300 font-medium mt-1">
               {release_date?.split("-")[0]}
             </Text>
-            {/* <Text className="text-xs font-medium text-light-300 uppercase">
-              Movie
-            </Text> */}
           </View>
         </View>
       </TouchableOpacity>
